@@ -1,11 +1,14 @@
+require("dotenv").config();
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const { MongoClient } = require("mongodb");
 const bodyparser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 const port = 3000;
+const JWT_SECRET = process.env.JWT_SECRET;
+console.log("JWT_SECRET:", JWT_SECRET);
 
 app.use(cors());
 app.use(bodyparser.json());
@@ -41,14 +44,35 @@ app.post("/login", async (req, res) => {
 
     const user = await users.findOne({ fullName, password });
 
-    if (user) {
-      res.status(200).send("Login successful");
-    } else {
-      res.status(401).send("Invalid credentials");
+    if (!user) {
+      return res.status(401).send("Invalid credentials");
     }
+
+    const token = jwt.sign({ fullName: user.fullName }, JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    res.status(200).json({ token });
   } catch (err) {
     console.error(err);
     res.status(500).send("Server error");
+  }
+});
+
+app.get("/protected", (req, res) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) {
+    return res.status(401).send("Missing token");
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    res.status(200).send(`Hello, ${decoded.fullName}. You are authenticated!`);
+  } catch (err) {
+    return res.status(403).send("Invalid or expired token");
   }
 });
 

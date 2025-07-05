@@ -64,7 +64,7 @@
           <p class="mx-auto mt-4 mb-2 w-100 text-lg text-slate-600">
             ------------------- OR -------------------
           </p>
-          <button onclick="window.location.href='login.html'" class="bg-gradient-to-r from-indigo-800 mt-2 mb-5 to-purple-300 text-white w-50 mx-4 rounded-lg p-1.5 cursor-pointer" type="submit">
+          <button id="existingUserBtn" class="bg-gradient-to-r from-indigo-800 mt-2 mb-5 to-purple-300 text-white w-50 mx-4 rounded-lg p-1.5 cursor-pointer" type="submit">
             Existing User
           </button>
           <p class="mx-auto mb-8 w-100 text-lg text-slate-600">
@@ -74,5 +74,42 @@
       </div>
     </div>
     <script src="script.js" defer></script>
+    <script>
+      const existingBtn = document.getElementById("existingUserBtn");
+    
+      existingBtn.addEventListener("click", () => {
+        const token = localStorage.getItem("token");
+        console.log("Token from localStorage:", token); // ✅ Log 1
+    
+        if (!token) {
+          console.log("❌ No token found");
+          window.location.href = "login.html";
+        } else {
+          console.log("✅ Token found. Verifying...");
+    
+          fetch("/protected", {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          })
+            .then(res => {
+              console.log("Response status:", res.status); // ✅ Log 2
+    
+              if (res.ok) {
+                console.log("✅ Valid token. Redirecting to todo.html");
+                window.location.href = "todo.html";
+              } else {
+                console.log("❌ Invalid token. Redirecting to login.html");
+                window.location.href = "login.html";
+              }
+            })
+            .catch(err => {
+              console.error("❌ Fetch error:", err);
+              window.location.href = "login.html";
+            });
+        }
+      });
+    </script>
+    
   </body>
 </html>

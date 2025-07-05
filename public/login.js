@@ -17,11 +17,13 @@ form.addEventListener("submit", async (e) => {
     const msg = document.getElementById("message");
 
     if(res.ok){
-        msg.textContent = "✅ Login successful!";
-        msg.classList.add("text-green-500");
+      const data = await res.json();
+      console.log("Received token:", data.token);
+      localStorage.setItem("token", data.token); // 🧠 Save the token
+      msg.textContent = "✅ Login successful!";
+      msg.classList.add("text-green-500");
     }else{
         msg.textContent = "❌ Invalid credentials.";
         msg.classList.add("text-red-500");
     }
-
 })
