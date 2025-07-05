@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </head>
+  <body class="">
+    <div class="relative h-screen">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+        ></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div
+        class="relative z-10 flex h-full flex-col items-center justify-center px-4"
+      >
+        <div class="">
+            <lord-icon
+            class="m-5"
+            src="https://cdn.lordicon.com/zcpmxjfa.json"
+            trigger="loop"
+            delay="100"
+            colors="primary:#ffffff,secondary:#848484"
+            style="width: 80px; height: 80px"
+            >
+        </div>
+        </lord-icon>
+        <div class="max-w-3xl text-center">
+          <h1
+            class="mb-8 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white"
+          >
+            Still Left
+            <span class="text-sky-200">Todo</span>
+          </h1>
+          <p class="mx-auto mb-8 max-w-2xl text-lg text-slate-600">
+            Your Personal Productivity Companion <br>
+            Age verification required for access
+          </p>
+          <div class="container border border-slate-600 rounded-xl w-125">
+            <h1 id="verify-text" class="text-white text-2xl pt-5">
+                Verify Your Identity
+            </h1>
+            <div>
+              <form action="" class="input flex flex-col px-3" id="loginForm">
+
+                <h3 class="text-white pt-7 pb-1.5 text-left mx-4">Full name</h3>
+                <input id="fullName" name="fullName" class="hover:bg-slate-300 hover:text-black mx-4 mb-6 text-slate-400 border border-slate-600 p-2 rounded-md" type="text" placeholder="Enter your full name">
+
+                <h3 class="text-white pb-1.5 text-left mx-4">Date of Birth</h3>
+                <input id="dob" name="dob" class="hover:bg-slate-300 hover:text-black mx-4 mb-6 text-slate-400 border border-slate-600 p-2 rounded-md" type="date">
+                
+                <button class="bg-gradient-to-r from-indigo-800 to-purple-300 text-white mx-4 rounded-lg p-1.5 mb-6 cursor-pointer" type="submit">
+                  Verify & Continue
+                </button>
+
+              </form>
+            </div>
+          </div>
+          <p class="mx-auto mt-4 mb-2 w-100 text-lg text-slate-600">
+            ------------------- OR -------------------
+          </p>
+          <button class="bg-gradient-to-r from-indigo-800 mt-2 mb-5 to-purple-300 text-white w-50 mx-4 rounded-lg p-1.5 cursor-pointer" type="submit">
+            Existing User
+          </button>
+          <p class="mx-auto mb-8 w-100 text-lg text-slate-600">
+            By continuing, you confirm that you are over 10 years old and agree to our terms of service.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
