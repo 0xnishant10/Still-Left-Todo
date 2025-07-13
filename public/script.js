@@ -34,6 +34,8 @@ form.addEventListener("submit", function (e) {
             console.log(data);
             document.getElementById("verify-text").innerHTML = "";
             form.innerHTML = `<p class="text-green-500 text-center pb-4">✅ User saved successfully!</p>`;
+            console.log("Redirecting");
+            window.location.href = "todo.html";
         })
         .catch(err => {
             console.log(err);

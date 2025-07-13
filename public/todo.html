@@ -1,1 +1,32 @@
-This is the app
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </head>
+  <body class="bg-black">
+    <div class="relative h-screen">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+        ></div>
+      </div>
+
+      <!-- Hero Content -->
+       <nav class="text-white px-7 my-3 h-10">
+        <div class="flex items-center pt-2 justify-between ">
+            <div class="flex gap-1">
+                <h3 class="font-bold text-2xl">Still Left</h3>
+                <span class="font-bold text-2xl text-sky-200">Todo</span>
+            </div>
+            <button class="cursor-pointer bg-red-200 px-2 rounded text-black">Log Out</button>
+        </div>
+       </nav>
+      
+    </div>
+    <script src="todo.js" defer></script>
+  </body>
+</html>

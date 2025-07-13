@@ -21,6 +21,7 @@ form.addEventListener("submit", async (e) => {
       console.log("Received token:", data.token);
       localStorage.setItem("token", data.token); // 🧠 Save the token
       msg.textContent = "✅ Login successful!";
+      window.location.href = "todo.html";
       msg.classList.add("text-green-500");
     }else{
         msg.textContent = "❌ Invalid credentials.";
