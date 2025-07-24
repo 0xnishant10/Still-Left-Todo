@@ -18,10 +18,13 @@
       <!-- Hero Content -->
       <nav class="relative text-white px-7 h-10">
         <div class="flex items-center pt-2 justify-between">
-          <div class="flex gap-1">
-            <h3 class="font-bold text-2xl">Still Left</h3>
-            <span class="font-bold text-2xl text-sky-200">Todo</span>
-          </div>
+          <a href="todo.html">
+
+            <div class="flex gap-1">
+              <h3 class="font-bold text-2xl">Still Left</h3>
+              <span class="font-bold text-2xl text-sky-200">Todo</span>
+            </div>
+          </a>
           <div class="flex items-center gap-3">
             <div class="User items-center flex gap-1">
               <lord-icon
@@ -36,7 +39,7 @@
             </div>
             <button
               id="logout-btn"
-              class="cursor-pointer bg-red-200 px-2 rounded text-black"
+              class="cursor-pointer bg-red-400 px-2 rounded text-black"
             >
               Log Out
             </button>
@@ -47,18 +50,39 @@
       <div
         class="tasks pt-3 flex flex-col rounded-xl bg-white/20 backdrop-blur-none relative items-center justify-center mt-40 mx-50"
       >
-        <div class="take-tasks w-full text-center mt-5 mb-20">
-          <h1 class="text-white text-5xl font-serif font-bold">What's Left To Do??</h1>
-          <div class="pt-10 pb-5">
-            <input class="pl-2 text-gray-700 w-200 rounded-lg bg-white p-1" type="text" placeholder="What's buggin' you?">
-            <button class="ml-5 px-2 rounded-lg bg-white p-1 cursor-pointer hover:text-black text-gray-400">Add Task</button>
-          </div>
-        </div>
+        <div class="take-tasks w-full text-center mt-5 mb-5">
+          <h1 class="text-white text-5xl font-serif font-bold">
+            What's Left To Do??
+          </h1>
+          <!-- <div class="pt-10 pb-5">
+            <input id="taskInput" class="pl-2 text-gray-700 w-200 rounded-lg bg-white p-1" type="text" placeholder="What's buggin' you?">
+            <button id="addTaskBtn" class="ml-5 px-2 rounded-lg bg-white p-1 cursor-pointer hover:text-black text-gray-400">Add Task</button>
+          </div> -->
+          <main class="max-w-xl mx-auto mt-10">
+            <div class="flex gap-2 ">
+              <input
+                id="taskInput"
+                class="flex-1 p-2 text-gray-700 rounded-lg bg-white"
+                placeholder="Your task..."
+              />
+              <button
+                id="addTaskBtn"
+                class="bg-white cursor-pointer text-black px-4 py-2 rounded"
+              >
+                Add
+              </button>
+            </div>
 
-        <div class="display-tasks mb-5 font-bold h-full font-serif text-3xl text-white w-full text-center ">
-          <h1 class="text-white text-4xl font-serif font-bold">Things to Smash !!</h1>
+            <div
+              class="display-tasks mt-20 font-bold h-full font-serif text-3xl text-white w-full text-center"
+            >
+              <h1 class="text-white text-4xl font-serif font-bold">
+                Things to Smash !!
+              </h1>
+              <ul id="taskList" class="mt-6 space-y-3"></ul>
+            </div>
+          </main>
         </div>
-
       </div>
     </div>
     <script src="todo.js" defer></script>
