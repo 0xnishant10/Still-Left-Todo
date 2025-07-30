@@ -35,20 +35,20 @@ cd jwt-auth-todo-app
 ```
 Or download the ZIP and extract it.
 
-2. 📦 Install dependencies
+### 2. 📦 Install dependencies
 ```bash
 npm install
 ```
-3. 🛠️ Configure environment variables
+### 3. 🛠️ Configure environment variables
 Create a .env file in the root folder and add:
 ```bash
 JWT_SECRET=your_jwt_secret_here
 MONGO_URI=mongodb+srv://your_user:your_password@cluster.mongodb.net
 DB_NAME=your_db_name
 ```
-Tip: Use MongoDB Atlas to create a free MongoDB cluster if you don’t have one.
+#### Tip: Use MongoDB Atlas to create a free MongoDB cluster if you don’t have one.
 
-4. ▶️ Run the server
+### 4. ▶️ Run the server
 ```bash
 node server.js
 ```
@@ -58,20 +58,20 @@ If everything is correct, you’ll see:
 Server running on http://localhost:3000
 ```
 
-💻 Using the App
+## 💻 Using the App
 1. Open http://localhost:3000 in your browser.
 2. Register a new user.
 3. You’ll be redirected to the Todo page.
 4. Add / edit / complete / delete your tasks.
 5. Refresh — your tasks will still be there (MongoDB saves them!).
 
-🧠 Tech Stack
+## 🧠 Tech Stack
 - Frontend: HTML, JavaScript, Tailwind CSS
 - Backend: Node.js, Express
 - Database: MongoDB
 - Authentication: JWT (JSON Web Tokens)
 
-📦 Useful Commands
+## 📦 Useful Commands
 ```bash
 npm install
 ```
@@ -82,7 +82,7 @@ node server.js
 Starts the backend server
 
 ## 🧑‍💻 Author
-Nishant Singh
+### Nishant Singh
 
 Feel free to fork, customize, or contribute!
 
