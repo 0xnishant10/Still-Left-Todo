@@ -15,25 +15,6 @@ A full-stack Todo application where users can register, log in, and manage their
 
 ---
 
-## 📁 Project Structure
-
-project-root/
-│
-├── public/ # Frontend files served by Express
-│ ├── index.html # Landing / register page
-│ ├── login.html # Login page
-│ ├── todo.html # Todo dashboard after login
-│ ├── style.css # Optional: your own styles
-│ ├── register.js
-│ ├── login.js
-│ └── todo.js
-│
-├── .env # Environment variables
-├── server.js # Main backend server file
-├── package.json
-└── README.md
----
-
 ## ⚙️ Prerequisites
 
 Make sure you have the following installed:
@@ -100,14 +81,10 @@ node server.js
 ```
 Starts the backend server
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 Nishant Singh
 
 Feel free to fork, customize, or contribute!
 
-🛡️ License
+ ## 🛡️ License
 This project is licensed under the MIT License.
-
-yaml
-Copy
-Edit
